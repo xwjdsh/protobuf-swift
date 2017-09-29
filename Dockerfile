@@ -1,0 +1,10 @@
+FROM ubuntu:14.04
+
+ARG PROTOBUF_VERSION=3.2.0
+ARG PROTOBUF_SWIFT_VERSION=3.0.23
+
+COPY setup.sh /
+RUN ./setup.sh
+
+WORKDIR /root
+ENTRYPOINT ["protoc"]
